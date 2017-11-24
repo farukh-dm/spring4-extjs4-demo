@@ -4,7 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="simple-auth"/>
         <property name="java-output-path" value="/simple-auth/target/classes"/>
+        <property name="context-root" value="spring-extjs"/>
     </wb-module>
 </project-modules>

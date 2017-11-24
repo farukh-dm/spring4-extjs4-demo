@@ -25,7 +25,6 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 
 import com.demo.spring.Dto.User;
-import com.demo.spring.login.beans.CurrentUser;
 import com.demo.spring.view.excel.UserExcelView;
 import com.demo.spring.view.pdf.UserPdfView;
 
@@ -34,14 +33,16 @@ import com.demo.spring.view.pdf.UserPdfView;
  *
  */
 @Controller
-@RequestMapping(value="/")
 public class HelloWorldController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldController.class);
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String sayHello() {
-		return "welcome";
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public void index(HttpServletRequest request, HttpSession session, 
+		HttpServletResponse response) throws IOException {
+		
+		response.sendRedirect(request.getContextPath() + AppConstant.DEFAULT_URI_AFTER_LOGIN);
+		
 	}
 	
 	@RequestMapping(
